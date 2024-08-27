@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="header ">Hiii</h1>
+    <h1 class="header">How are you</h1>
+    <h1 class="header">Everyone</h1>
+    <script>
+        var res=document.getElementsByClassName("header");
+        for( let i=0;i<res.length;++i){
+            res[i].style.textAlign="center";
+            res[i].style.backgroundColor="pink";
+        }
+        var res=document.querySelectorAll(".header");
+        for ( let i in res ){
+            res[i].style.textShadow="0 0 5px green"
+        }
+    
+    </script>
+
+</body>
+</html>

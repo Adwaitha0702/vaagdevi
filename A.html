@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="sub()">
+        <input type="text" id="name" onkeyup="cap()">
+        <input type="submit">
+        <script>
+            function sub()
+            {
+                document.write("the form is submitted");
+            }
+            function cap(){
+            var a=document.getElementById("name");
+            a.value=a.value.toUpperCase();
+                 
+                
+              
+            }
+        </script>
+    </form>
+</body>
+</html>

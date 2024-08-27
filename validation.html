@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .elder
+        {
+            height: 100vh;
+            width:100%;
+            background-image: linear-gradient(blue,violet);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .parent
+        {
+            width: 50%;
+            height:50vh;
+            border-radius: 10px;
+            display: flex;
+            background-color: aqua;
+            justify-content: center;
+            align-items: center;
+        }
+            
+        .parent .field
+        {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+        .field{
+           margin-top:10px;
+        }
+        input[type="submit"]{
+            background-color: brown;
+            opacity: 0.5;
+        }
+        input[type="submit"]:hover{
+           opacity: 1;
+        }
+        .c1-pass{
+            color: green;
+        }
+        .c1-fail{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="elder">
+
+          <div  class="parent">
+
+            <form action="" >
+
+                <div class="field"><label for="username">username</label>
+                <input type="text" id="username" name="username" required placeholder="enter your name"></div>
+                <ul id="c1">username should be atleast max 10 char</ul>
+                <ul id="c2">should not contain first char as spaces</ul>
+                <ul id="c3">should not start with numbers</ul>
+                
+                <div class="field"><label for="password">password</label>
+                <input type="password" id="pwd" required placeholder="enter password"></div>
+                
+                
+                <div class="field"><input type="submit"></div>
+            
+            </form>
+        </div>
+    </div>
+    <script> 
+        var username=document.getElementById("username");
+        username.addEventListener('input',function()
+        {
+            if(username.value.length>10)
+            {
+                document.getElementById("c1").classList.add('c1-fail');
+                document.getElementById("c1").classList.remove('c1-pass');
+            }
+            else{
+            document.getElementById("c1").classList.add('c1-pass');
+            document.getElementById("c1").classList.remove('c1-fail');
+            }
+            var first=username.value.charAt(0);
+            console.log(first+" "+isNaN(first));
+
+            if(!isNaN(first))
+              {
+                document.getElementById("c3").classList.add('c1-fail');
+                document.getElementById("c3").classList.remove('c1-pass');
+              }
+            else{
+                document.getElementById("c3").classList.add('c1-pass');
+                document.getElementById("c3").classList.remove('c1-fail');
+            }
+          
+           
+            let user1=username.value.trim();
+            console.log(user1)
+            
+            if(username.value!==user1){
+                document.getElementById("c2").classList.add('c1-fail');
+                document.getElementById("c2").classList.remove('c1-pass');
+            }
+            else{
+                document.getElementById("c2").classList.add('c1-pass');
+                document.getElementById("c2").classList.remove('c1-fail');
+            }
+
+
+           
+           
+        });
+        
+        
+    </script>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .elder
+        {
+            height: 100vh;
+            width:100%;
+            background-image: linear-gradient(blue,violet);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .parent
+        {
+            width: 50%;
+            height:50vh;
+            border-radius: 10px;
+            display: flex;
+            background-color: aqua;
+            justify-content: center;
+            align-items: center;
+        }
+            
+        .parent .field
+        {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+        .field{
+           margin-top:10px;
+        }
+        input[type="submit"]{
+            background-color: brown;
+            opacity: 0.5;
+        }
+        input[type="submit"]:hover{
+           opacity: 1;
+        }
+        
+    </style>
+</head>
+
+<body>
+   
+    <div class="elder">
+
+          <div  class="parent">
+
+            <form action="" >
+
+                <div class="field"><label for="username">username</label>
+                <input type="text" id="username" required placeholder="enter your name"></div>
+                
+                <div class="field"><label for="password">password</label>
+                <input type="password" id="pwd" required placeholder="enter password"></div>
+                <label for="check" name="check"></label>
+                <input type="checkbox" id="check" name="check">show password
+                
+                <div class="field"><input type="submit"></div>
+            
+            </form>
+        </div>
+    </div> 
+    <script>
+        let pwd=document.getElementById("pwd");
+        let check=document.getElementById("check");
+        check.addEventListener('change',function()
+        {
+            var attr=pwd.getAttribute("type")
+            if(attr==="password")
+               {
+                pwd.setAttribute("type","text");
+               }
+            else{
+                pwd.setAttribute("type","password")
+            }
+        });
+
+    </script>
+</body>
+</html>
